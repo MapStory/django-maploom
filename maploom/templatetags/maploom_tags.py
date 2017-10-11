@@ -3,12 +3,12 @@ from django import template
 register = template.Library()
 
 
-@register.inclusion_tag('maploom/_maploom_map.html')
-def maploom_html(options=None):
+@register.inclusion_tag('maploom/_maploom_map.html', takes_context=True)
+def maploom_html(context):
     """
     Maploom html template tag.
     """
-    return dict()
+    return context
 
 
 @register.inclusion_tag('maploom/_maploom_js.html')
