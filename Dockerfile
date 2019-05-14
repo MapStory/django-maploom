@@ -1,7 +1,7 @@
 FROM quay.io/mapstory/maploom-build AS maploom-builder
 MAINTAINER Tyler Battle <tbattle@boundlessgeo.com>
 
-FROM bitnami/minideb:jessie
+FROM bitnami/minideb:stretch
 RUN install_packages git
 
 COPY --from=maploom-builder /usr/src/app /maploom
